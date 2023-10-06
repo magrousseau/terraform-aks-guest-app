@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: magrousseauterraformaksguestapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: magrousseauterraformaksguestapp
+  template:
+    metadata:
+      labels:
+        app: magrousseauterraformaksguestapp 
+    spec:
+      containers:
+        - name: magrousseauterraformaksguestapp 
+          image: devopsaksterraform.azurecr.io/magrousseauterraformaksguestapp
+          ports:
+          - containerPort: 5000
